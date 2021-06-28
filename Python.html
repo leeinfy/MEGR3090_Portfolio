@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>LimitOS</title>
+    <style>h1{font-size: 40px; Color:black; text-align: center;} p{width:900px; text-align: left}</style>
+  </head>
+  <body>
+    <center><h1>Python Assignment</h1>
+      <br>
+      Material Used: Raspberry Pi, Button, Servo, DC motor, L298N motor drive.<br>
+      <img src="Picture/Python_Schematic.jpg" title="Python Schematic" alt="Python Schematic" height = "500" width ="500">
+        <br>
+      I currently only have one button avaliable, therefore, I decide to manage all the changes only in one button.
+      The DC motor drive is main power of the robot. And the camera mount may need servo for a 180 degree rotation.
+      I was also planning to add a joystick and LCD screen to the prototype. But these module need to get access to analog read, 
+      which needs some external integral circuit to achieve. The servo is connect to 3.3v and ground. the analog pin of servo is connect
+      to pin 22. the motor direction pin is connect to pin 17 and 27, motor speed pin is connect to pin 2. the button read input from pin
+      4. <br>
+      <a href="https://github.com/leeinfy/Yinfei-Li-website/blob/main/program.py">My Python Code</a><br>
+      This program cycle the mode everytime the button is pressed. the first mode is servo in its 90 degree postion, and
+      the dc motor is stopped. The second mode is servo is 0 degree position, and dc motor drive forward. the third mode is servo
+      is 180 degree position, and the dc motor in backward mode. I was original want to use the joystick to control the speed of motor.
+      Since the joystick need extra circuit for analog input. I only wrote the 50 PWM dutycycle. And in the buttonispressed function is 
+      for button debouncing issue.<br>
+      There are also some issues unsovled. The first one is the analog input reading from the peripheral. The second issue is AngularServo.
+      I use angularservo library first, but the servo is jittering. it suggest me to use PiGpio. However, the example in gipozero only
+      works on LED.<br>
+      <video width="700" height="500" controls>
+          <source src="Video/Python_Showcase.mp4" type="video/mp4">
+        </video>
+      <h2>Reference</h2>
+      <a href="https://sourceforge.net/p/raspberry-gpio-python/wiki/PWM/">Source Forge</a><br>
+      <a href="https://gpiozero.readthedocs.io/en/stable/index.html">GPIOzero</a>
+      <br><br><br>
+      <a href="index.html">Home</a>&nbsp<a href="MEGR3090.html">Back</a>
+    </center>
+  </body>
+</html>

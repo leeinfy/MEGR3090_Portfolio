@@ -9,7 +9,7 @@ blynk = blynklib.Blynk(BLYNK_AUTH)
 READ_PRINT_MSG = "[READ_VIRTUAL_PIN_EVENT] Pin: V{}"
 
 
-# register handler for virtual pin V11 reading
+# register handler for virtual pin V2 reading
 @blynk.handle_event('read V2')
 def read_virtual_pin_handler(pin):
     print(READ_PRINT_MSG.format(pin))

@@ -13,7 +13,7 @@ GPIO.setup(motorPin1, GPIO.OUT)
 GPIO.setup(motorPin2, GPIO.OUT)
 GPIO.setup(motorSpeedControl, GPIO.OUT)
 
-p = GPIO.PWM(4, 1000)
+p = GPIO.PWM(motorSpeedControl, 1000)
 P.start(50)
 
 motorMode = 0

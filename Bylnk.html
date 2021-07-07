@@ -6,18 +6,17 @@
     <style>h1{font-size: 40px; Color:black; text-align: center;} p{width:900px; text-align: left}</style>
   </head>
   <body>
-    <center><h1>Python Assignment</h1>
+    <center><h1>Blynk Assignment</h1>
       <br>
-      Material Used: Raspberry Pi, Button, Servo, DC motor, L298N motor drive.<br>
-      <img src="Picture/Python_Schematic.png" title="Python Schematic" alt="Python Schematic" height = "500" width ="500">
+      Material Used: Raspberry Pi, LED, Camera module, DC motor, L298N motor drive,Blynk.<br>
+      <img src="Picture/Bylnk Schematic.png" title="Blynk Schematic" alt="Bylnk Schematic" height = "500" width ="500">
         <br>
-      I currently only have one button avaliable, therefore, I decide to manage all the changes only in one button.
-      The DC motor drive is main power of the robot. And the camera mount may need servo for a 180 degree rotation.
-      I was also planning to add a joystick to the prototype. But these module need to get access to
-      <a herf="https://learn.adafruit.com/reading-a-analog-in-and-controlling-audio-volume-with-the-raspberry-pi?view=all">analog read</a>, 
-      which needs some external integral circuit to achieve. The servo is connect to 3.3v and ground. the analog pin of servo is connect
-      to pin 22. the motor direction pin is connect to pin 17 and 27, motor speed pin is connect to pin 2. the button read input from pin
-      4. <br><br>
+      The wiring is almost the same as My python setup. The raspberrypi is connect with a motordrive. It is also connected with LED.
+      The Blynk project is use the Blynk phone app to connect the motor and LED. The LED is connect to pin4 and a 330ohm resistor.
+      the motor drive motor1 pin 1 , pin2 and speed pin are connect to GPIO 17, 27, and 22. The camera module is also mounted on the
+      raspberry pi.<br><br>
+      <img src="Picture/Bylnk.jpg" title="Blynk" alt="Bylnk" height = "500" width ="500">
+        <br>
       <a href="https://github.com/leeinfy/Yinfei-Li-website/blob/main/program.py">Motor python prototype Code</a><br><br>
       This program cycle the mode everytime the button is pressed. the first mode is servo in its 90 degree postion, and
       the dc motor is stopped. The second mode is servo is 0 degree position, and dc motor drive forward. the third mode is servo

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>LimitOS</title>
+    <style>h1{font-size: 40px; Color:black; text-align: center;} p{width:900px; text-align: left}</style>
+  </head>
+  <body>
+    <center><h1>Python Assignment</h1>
+      <br>
+      Material Used: Raspberry Pi, Button, Servo, DC motor, L298N motor drive.<br>
+      <img src="Picture/Python_Schematic.png" title="Python Schematic" alt="Python Schematic" height = "500" width ="500">
+        <br>
+      I currently only have one button avaliable, therefore, I decide to manage all the changes only in one button.
+      The DC motor drive is main power of the robot. And the camera mount may need servo for a 180 degree rotation.
+      I was also planning to add a joystick to the prototype. But these module need to get access to
+      <a herf="https://learn.adafruit.com/reading-a-analog-in-and-controlling-audio-volume-with-the-raspberry-pi?view=all">analog read</a>, 
+      which needs some external integral circuit to achieve. The servo is connect to 3.3v and ground. the analog pin of servo is connect
+      to pin 22. the motor direction pin is connect to pin 17 and 27, motor speed pin is connect to pin 2. the button read input from pin
+      4. <br><br>
+      <a href="https://github.com/leeinfy/Yinfei-Li-website/blob/main/program.py">Motor python prototype Code</a><br><br>
+      This program cycle the mode everytime the button is pressed. the first mode is servo in its 90 degree postion, and
+      the dc motor is stopped. The second mode is servo is 0 degree position, and dc motor drive forward. the third mode is servo
+      is 180 degree position, and the dc motor in backward mode. I was original want to use the joystick to control the speed of motor.
+      Since the joystick need extra circuit for analog input. I only wrote the 50 PWM dutycycle. And in the buttonispressed function is 
+      for button debouncing issue.<br><br>
+      Lesson learned: python code syntax, raspberry gpio digital and analog output, control and monitor the raspberry gpio via terminal.
+      <br><br>
+      There are also some issues unsovled. The first one is the analog input reading from the peripheral. The second issue is AngularServo.
+      I use angularservo library first, but the servo is jittering. it suggest me to use
+      <a href="https://gpiozero.readthedocs.io/en/stable/api_pins.html#module-gpiozero.pins.pigpio"> PiGpio </a>. However, the syntax only
+      works on LED. The last one is i followed the guide of <a  href="https://bc-robotics.com/tutorials/getting-started-blynk-raspberry-pi-3/">BCrobotic </a> 
+      website blynk connection guide. But the button and LED dont work. i end up at step 13<br>
+      <video width="700" height="500" controls>
+          <source src="Video/Python_Showcase.mp4" type="video/mp4">
+        </video>
+      <br><br>
+      I was be able to connected to Blynk. But i have no idea how to make blynk work. I attach a LED with pin2 and setup the LED wedge in blynk to virtual 2. I pasted the code
+      in <a href="https://github.com/blynkkk/lib-python">bylink-python </a> sample code to write the virtual 2 registor. But when i run the code nothing happen. My LED
+      on the Blynk didn't read the value.<br>
+      <a href="https://github.com/leeinfy/Yinfei-Li-website/blob/main/myBlynkTest.py">myBlynkTest code</a>
+      <h2>Reference</h2>
+      <a href="https://sourceforge.net/p/raspberry-gpio-python/wiki/PWM/">SourceForge</a> : Digital and Analog output<br>
+      <a href="https://gpiozero.readthedocs.io/en/stable/index.html">GPIOzero</a> : Servo, button <br>
+      <a href="https://www.raspberrypi.org/forums/viewtopic.php?t=137414">Raspberry.org</a>: gpio terminal code
+      <br><br><br>
+      <a href="index.html">Home</a>&nbsp<a href="MEGR3090.html">Back</a>
+    </center>
+  </body>
+</html>

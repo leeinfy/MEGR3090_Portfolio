@@ -39,8 +39,10 @@ def write_virtual_pin_handler(pin, value):
         
 @blynk.handle_event('write V2')
 def write_virtual_pin_handler(pin, value):
-    speed = int(format(value[0]))
+    sliderValue = int(format(value[0]))
+    speed = sliderValue
     p.ChangeDutyCycle(speed)
+    print(speed)
 
 @blynk.handle_event('write V1')
 def write_virtual_pin_handler(pin, value):
@@ -57,6 +59,7 @@ def write_virtual_pin_handler(pin, value):
 @blynk.handle_event('read V3')
 def read_virtual_pin_handler(pin):
     blynk.virtual_write(pin, speed)
+    print(speed)
 
 while True:
     blynk.run()

@@ -44,7 +44,7 @@ def write_virtual_pin_handler(pin, value):
     speed = sliderValue
     p.ChangeDutyCycle(speed)
 
-@blynk.handle_event('write V1')
+@blynk.handle_event('write V1') #chagne direction of motor
 def write_virtual_pin_handler(pin, value):
     motorReverse = (format(value[0]))
     if  motorReverse == "1":

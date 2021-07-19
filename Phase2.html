@@ -2,45 +2,40 @@
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>Blynk</title>
+    <title>Phase 2</title>
     <style>h1{font-size: 40px; Color:black; text-align: center;} p{width:900px; text-align: left}</style>
   </head>
   <body>
-    <center><h1>Blynk Assignment</h1>
+    <center><h1>Phase 2 robot</h1>
       <br>
-      Material Used: Raspberry Pi, LED, Camera module, DC motor, L298N motor drive,Blynk.<br>
-      <img src="Picture/Blynk Schematic.png" title="Blynk Schematic" alt="Blynk Schematic" height = "400" width ="500">
+      <img src="Picture/Phase2ChassisDraw.png" title="Chassis Desgin" height = "400" width ="500">
         <br>
-      The wiring is almost the same as My python setup. The raspberrypi is connect with a motordrive. It is also connected with LED.
-      The Blynk project is use the Blynk phone app to connect the motor and LED. The LED is connect to pin4 and a 330ohm resistor.
-      the motor drive motor1 pin 1 , pin2 and speed pin are connect to GPIO 17, 27, and 22. The camera module is also mounted on the
-      raspberry pi.<br><br>
-      <img src="Picture/Blynk.jpg" title="Blynk" alt="Blynk" height = "550" width ="300">
+      I want my robot to make my robot flexible, since it was still a prototpye. The raspberry charger is to large. for a simple remote robot car. raspberry is also overkill.
+      These component might bechage in the future. Thus i want to sort my parts into modules. The first layer is L298N motor drive and battery pack.
+      This is the back bone of the robot. And the second layer is raspberry charger since it is large enough to take a whole layer
+      The third layer is raspberry pi modules. And the rest of place will be avaliable for other modules such as camera or ultra sonic sensor<br><br>
+      <img src="Picture/Phase2WheelDraw.png" title="Wheel Desgin"height = "550" width ="300">
         <br>
-      There are 2 button, a slider, and a comaera interface in my blynk app. The first button is to control the motor, the second button is to 
-      control the direction of my motor. The slider is made for speed control of the motor.<br><br>
-      <a href="https://github.com/leeinfy/Yinfei-Li-website/blob/main/Blynk.py">Blynk python code</a><br>
-      This program is to control the motor drive and LED. the button 1 is set up as virtual pin 0. whenever the button is pressed the motor 
-      chnage from stop state to moving state. And when operation is on the Green LED will light up. The second button is connect to virtual pin 2.
-      whenver the button is pressed the motor change its direction. The slider is set up as the virtual pin 1. the value range from 0 to 100.<br><br>
-      <a href="https://github.com/leeinfy/Yinfei-Li-website/blob/main/Camera.py">Camera code</a><br>
-      Camera code was copy from <a href="https://randomnerdtutorials.com/video-streaming-with-raspberry-pi-camera/">RandomNerd Tutorial</a>. 
-      The code is to set up a website online stream using raspberry pi ip address. And the Blynk was able to read the steam with its website address.<br><br>
-      There are some issue of my Blynk code.  My original plan was to made a global state machine type of code. However, the function of Blynk does not write global variable.
-      I created a global varaible called state. But the state within the Blynk function will become another variable with different address. And i could not change my speed variable.
-      It might because of syntax of python. The second issue is I am still confused with the format function. I check the value track from slider it is a unicode. I use a
-      <a href="https://community.blynk.cc/t/python-how-to-retrieve-a-slider-value-in-a-variable/48176">community </a>
-      code to change the value into integral. But I do need to find a guid of Blynk library. The third is the camera code and My Blynk code use different python version.
-      I might combined them into a singal code later, if I install my Blynk-library into python3 folder.<br><br>
-      <video width="700" height="500" controls>
-          <source src="Video/Blynk_Showcase.mp4" type="video/mp4">
-        </video>
+      I was think about add a damper to my robot. Thus i brainstormed 2 way to mount the motor. First is to motor the mount with no degree of freedom. The second
+      is mount with 1 degree of freedom and add damper later. I make to mount similarly. Thus all i need is to swap motor mount.<br><br>
+      <img src="Picture/Phase2MotorMountCAD.png" title="Wheel CAD" height = "550" width ="300"><img src="Picture/Phase2MotorMountCAD_FrontView.png" title="Wheel CAD Front View"height = "550" width ="300"><br>
+      <img src="Picture/Phase2ChassisCAD.png" title="Chassis CAD"height = "550" width ="300"><br><br>
+      <img src="Picture/Phase2CameraDraw.png" title="Camera Draw"height = "550" width ="300"><br>
+      I want my camera to have 2 degree of freemdom and drive my 2 180 degree servo. I might not use all the up to 180 degree.<br><br>
+      <img src="Picture/Phase2CameraCAD.png" title="Camera CAD"height = "550" width ="300"><br><br>
+      <img src="Picture/Phase2FinalAssembly.png" title="Final Assembly"height = "550" width ="300"><br><br>
+      I only printed out my Layer 1, Layer2, and my motor mount. All my desgin was planning to use a 3mm diameter screw and nuts. My 3d CAD leave all my hole to 3.1mm. 
+      But the screw would not be able to fit. Then i find out 2.5mm screw could slot into 3.1mm hole. Thus i swith all the hold diameter to 3.5mm.
       <br><br>
-      Lesson learned: python syntax, Blynk library <br>
-      Three problem solved: <a href="https://packaging.python.org/tutorials/installing-packages/">install page to python3</a>
-      <h2>Reference</h2>
-      <a href="https://sourceforge.net/p/raspberry-gpio-python/wiki/PWM/">Github</a> : Blynk library
-      <br><br><br>
+      I aslo find out the respberry pi screw is 2.5mm diameter. And my raspbery charger holder need to switch the width from 68mm to 70mm.
+      <br><br>
+      I also cut some unnasserry part on my base to save some material and lower the printing time.
+      <br><br>
+      <img src="Picture/Phase2Blynk.jpg" title="Phase2 Blynk"height = "550" width ="300"><br>
+      During the time of printing i start working on my code. I was planning to use the joystick to control my motor, and use 2 slider to control my robot.
+      I will use to 5 global state to represent the direction. and select 2 speed or 3 speed region based on performance.
+      <br><br>
+      Lesson learned: Fushion 360 <br>
       <a href="index.html">Home</a>&nbsp<a href="MEGR3090.html">Back</a>
     </center>
   </body>

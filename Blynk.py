@@ -25,7 +25,7 @@ p.start(0)
 
 
 # register handler for virtual pin V0 write event
-@blynk.handle_event('write V0')
+@blynk.handle_event('write V0') # on and off switch
 def write_virtual_pin_handler(pin, value):
     switch = (format(value[0]))
     if switch == "0":
@@ -37,14 +37,16 @@ def write_virtual_pin_handler(pin, value):
         GPIO.output(motorAin2, 0)
         led.value = 1
         
-@blynk.handle_event('write V2')
+# register handler for virtual pin V2 write event       
+@blynk.handle_event('write V2') # motor speed
 def write_virtual_pin_handler(pin, value):
     sliderValue = int(format(value[0]))
     global speed
     speed = sliderValue
     p.ChangeDutyCycle(speed)
 
-@blynk.handle_event('write V1') #chagne direction of motor
+# register handler for virtual pin V1 write event
+@blynk.handle_event('write V1') #change direction of motor
 def write_virtual_pin_handler(pin, value):
     motorReverse = (format(value[0]))
     if  motorReverse == "1":

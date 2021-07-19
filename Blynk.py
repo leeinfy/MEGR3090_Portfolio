@@ -13,8 +13,7 @@ motorAin1 = 17
 motorAin2 = 27
 motorAen = 22
 led = LED(4)
-speed = 25
-print(id(speed))
+speed = 0
 
 motorState = 0
 GPIO.setmode(GPIO.BCM)
@@ -41,9 +40,9 @@ def write_virtual_pin_handler(pin, value):
 @blynk.handle_event('write V2')
 def write_virtual_pin_handler(pin, value):
     sliderValue = int(format(value[0]))
+    global speed
     speed = sliderValue
     p.ChangeDutyCycle(speed)
-    print(id(speed))
 
 @blynk.handle_event('write V1')
 def write_virtual_pin_handler(pin, value):
@@ -60,7 +59,6 @@ def write_virtual_pin_handler(pin, value):
 @blynk.handle_event('read V3')
 def read_virtual_pin_handler(pin):
     blynk.virtual_write(pin, speed)
-    print(id(speed))
 
 while True:
     blynk.run()

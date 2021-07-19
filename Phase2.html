@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Blynk</title>
+    <style>h1{font-size: 40px; Color:black; text-align: center;} p{width:900px; text-align: left}</style>
+  </head>
+  <body>
+    <center><h1>Blynk Assignment</h1>
+      <br>
+      Material Used: Raspberry Pi, LED, Camera module, DC motor, L298N motor drive,Blynk.<br>
+      <img src="Picture/Blynk Schematic.png" title="Blynk Schematic" alt="Blynk Schematic" height = "400" width ="500">
+        <br>
+      The wiring is almost the same as My python setup. The raspberrypi is connect with a motordrive. It is also connected with LED.
+      The Blynk project is use the Blynk phone app to connect the motor and LED. The LED is connect to pin4 and a 330ohm resistor.
+      the motor drive motor1 pin 1 , pin2 and speed pin are connect to GPIO 17, 27, and 22. The camera module is also mounted on the
+      raspberry pi.<br><br>
+      <img src="Picture/Blynk.jpg" title="Blynk" alt="Blynk" height = "550" width ="300">
+        <br>
+      There are 2 button, a slider, and a comaera interface in my blynk app. The first button is to control the motor, the second button is to 
+      control the direction of my motor. The slider is made for speed control of the motor.<br><br>
+      <a href="https://github.com/leeinfy/Yinfei-Li-website/blob/main/Blynk.py">Blynk python code</a><br>
+      This program is to control the motor drive and LED. the button 1 is set up as virtual pin 0. whenever the button is pressed the motor 
+      chnage from stop state to moving state. And when operation is on the Green LED will light up. The second button is connect to virtual pin 2.
+      whenver the button is pressed the motor change its direction. The slider is set up as the virtual pin 1. the value range from 0 to 100.<br><br>
+      <a href="https://github.com/leeinfy/Yinfei-Li-website/blob/main/Camera.py">Camera code</a><br>
+      Camera code was copy from <a href="https://randomnerdtutorials.com/video-streaming-with-raspberry-pi-camera/">RandomNerd Tutorial</a>. 
+      The code is to set up a website online stream using raspberry pi ip address. And the Blynk was able to read the steam with its website address.<br><br>
+      There are some issue of my Blynk code.  My original plan was to made a global state machine type of code. However, the function of Blynk does not write global variable.
+      I created a global varaible called state. But the state within the Blynk function will become another variable with different address. And i could not change my speed variable.
+      It might because of syntax of python. The second issue is I am still confused with the format function. I check the value track from slider it is a unicode. I use a
+      <a href="https://community.blynk.cc/t/python-how-to-retrieve-a-slider-value-in-a-variable/48176">community </a>
+      code to change the value into integral. But I do need to find a guid of Blynk library. The third is the camera code and My Blynk code use different python version.
+      I might combined them into a singal code later, if I install my Blynk-library into python3 folder.<br><br>
+      <video width="700" height="500" controls>
+          <source src="Video/Blynk_Showcase.mp4" type="video/mp4">
+        </video>
+      <br><br>
+      Lesson learned: python syntax, Blynk library <br>
+      Three problem solved: <a href="https://packaging.python.org/tutorials/installing-packages/">install page to python3</a>
+      <h2>Reference</h2>
+      <a href="https://sourceforge.net/p/raspberry-gpio-python/wiki/PWM/">Github</a> : Blynk library
+      <br><br><br>
+      <a href="index.html">Home</a>&nbsp<a href="MEGR3090.html">Back</a>
+    </center>
+  </body>
+</html>

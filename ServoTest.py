@@ -11,9 +11,12 @@ p.start(0)
 #for band width length check the datasheet
 #My servo is Micro Servo 9g S51, and my range is from 2 to 13
 #change frequency with code p.Changefrequency(X)
-p.ChangeDutyCycle(7.5) 
-time.sleep(.3)
-p.stop() 
+while True:
+    a = float(input())
+    p.ChangeDutyCycle(a)
+    time.sleep(.3)
+    p.ChangeDutyCycle(0)
+
 
     
     

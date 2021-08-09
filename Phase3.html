@@ -25,15 +25,19 @@
       The servo only be able to move a 180 degree angle. In order to move the Ultrasonic Sensor for 360. I need to desgin at least 2 over 1 gear ratio gearbox.
       This is my CAD model of my gearbox. the gear ratio is 20 oever 8.<br><br>
       After printing the gearbox out. i find out the servo and gear connection part was not good, it cause a lot of variance during the rotation. Thus i improve the gearbox
-      and the assembly to improve the performance of the ultrosonic parts of my robot. (the fianl assembly CAD below)
-      <img src="Picture/NewUltrasonicSensorCAD.png" title="Phase3 Distance Sensor Code"><br>
-      Then I assembly the rest of my parts together. 
-      <img src="Picture/Phase3FinalRobot.PNG" title="Phase3 Distance Sensor Code"><br>
+      and the assembly to improve the performance of the ultrosonic parts of my robot. (the fianl assembly CAD below)<br>
+      <img src="Picture/newUltrasonicSensorCAD.png" title="Phase3 Distance Sensor Code"><br>
+      Then I assembly the rest of my parts together. <br>
+      <img src="Picture/Phase3FinalRobot.png" title="Phase3 Distance Sensor Code"><br>
        <a href="https://github.com/leeinfy/Yinfei-Li-website/blob/main/Phase3Blynk.pyl">Phase3Blynk code</a><br>
+      <video width="700" height="500" controls>
+          <source src="Video/DistanceMeasuring.mp4" type="video/mp4">
+        </video><br>
       The code makes the ultrasonic sensor determined the distance of surround with 15 degree angle each step and a total of 24 times. Then these data was stored in a txt file.
       To map from another position. I will determine the angle and time the robot moved. The angle was determined by gyroscrope. However, the microcontroller vaires. I have to 
       manully changed the resgistor address corresponded to my MPU.
       <a href="https://github.com/leeinfy/Yinfei-Li-website/blob/main/accelerTest.py">gyroscrope code</a><br>
+      <a href="https://github.com/leeinfy/Yinfei-Li-website/blob/main/test.txt">saved test.txt</a><br>
       The gyroscrope code was working periodicly. Thus this function has not yet been applied to my main script.<br><br>
       <a href="index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="MEGR3090.html">Back</a></center>
     <p></p>
